@@ -1,10 +1,10 @@
 # Mission Control Servo Adapter
 
-## MCU Pinout
+## About
 
-MCU: AVR64DU32T-I/PT (IC1), TQFP-32
+This system takes two 12V-24V DC outputs from our Mission Control box and translates them into two 5V servo PWM outputs, for use on our Sphinx liquid engine. It uses the AVR64DU32T-I/PT (IC1), TQFP-32.
 
-### Signals
+## Pinout
 
 | Pin | Port | Net | Direction | Connects to | Notes |
 | --- | --- | --- | --- | --- | --- |
@@ -19,36 +19,3 @@ MCU: AVR64DU32T-I/PT (IC1), TQFP-32
 | 27 | PF7 | UPDI | Programming | J7 pin 1 | |
 | 31 | PA1 | SERVO_1 | PWM output | J1 pin 1 | |
 | 32 | PA2 | SERVO_2 | PWM output | J2 pin 1 | |
-
-### Power
-
-| Pin | Name | Net | Notes |
-| --- | --- | --- | --- |
-| 6 | VUSB | - | 1uF to GND (C8) |
-| 18 | VDD | +5V | 100nF decoupling (C10) |
-| 19 | GND | GND | |
-| 28 | VDD | +5V | 100nF decoupling (C9) |
-| 29 | GND | GND | |
-
-### Unused
-
-These pins are not connected:
-
-| Pin | Port |
-| --- | --- |
-| 4 | PA6 |
-| 5 | PA7 |
-| 10 | PD0 |
-| 13 | PD3 |
-| 14 | PD4 |
-| 15 | PD5 |
-| 16 | PD6 |
-| 17 | PD7 |
-| 20 | PF0 (XTAL32K1) |
-| 21 | PF1 (XTAL32K2) |
-| 22 | PF2 |
-| 23 | PF3 |
-| 24 | PF4 |
-| 25 | PF5 |
-| 26 | PF6 (RESET) |
-| 30 | PA0 (XTALHF1) |
