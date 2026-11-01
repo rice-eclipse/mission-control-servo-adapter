@@ -1,0 +1,20 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+"C1, C10, C11, C2, C9",1206,5,100nF,
+C12,1206,1,10uF,
+"C3, C4, C5",1206,3,47uF,
+C8,1206,1,1uF,
+"D1, D2, D3",1206,3,LED,
+IC1,TQFP-32_7x7mm_P0.8mm,1,AVR64DU32T-I_PT,
+J1,PinSocket_1x03_P2.54mm_Vertical,1,SERVO_1,
+J2,PinSocket_1x03_P2.54mm_Vertical,1,SERVO_2,
+J3,TerminalBlock_4Ucon_1x02_P3.50mm_Horizontal,1,5V_IN,
+J4,TerminalBlock_4Ucon_1x02_P3.50mm_Horizontal,1,INPUT_1,
+J5,TerminalBlock_4Ucon_1x02_P3.50mm_Horizontal,1,INPUT_2,
+J7,PinSocket_1x03_P2.54mm_Vertical,1,UPDI,
+"R1, R3",1206,2,56k,
+"R12, R13",1206,2,22,
+"R14, R7, R8",1206,3,10k,
+"R15, R16",1206,2,5.1k,
+"R5, R6, R9",1206,3,1.5k,
+SW1,PTS810SJM250SMTRLFS,1,PTS810SJM250SMTRLFS,C116501
+USB1,UJ20-C-H-G-SMT-1-P16-TR_C45082766,1,UJ20-C-H-G-SMT-1-P16-TR_C45082766,C45082766

@@ -1,0 +1,7 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "AVR64DU32T-I_PT") (type "KiCad") (uri "C:/Users/harpe/Downloads/LIB_AVR64DU32T-I_PT/AVR64DU32T-I_PT/KiCad/AVR64DU32T-I_PT.kicad_sym") (options "") (descr ""))
+	(lib (name "UJ20-C-H-G-SMT-1-P16-TR") (type "KiCad") (uri "C:/Users/harpe/Downloads/UJ20_C_H_G_SMT_1_P16_TR/UJ20-C-H-G-SMT-1-P16-TR.kicad_sym") (options "") (descr ""))
+	(lib (name "2026-10-05_23-34-23") (type "KiCad") (uri "C:/Users/harpe/Downloads/PTS810_SJM_250_SMTR_LFS/KiCADv6/2026-10-05_23-34-23.kicad_sym") (options "") (descr ""))
+	(lib (name "JLCImport") (type "KiCad") (uri "${KIPRJMOD}/JLCImport.kicad_sym") (options "") (descr ""))
+)
