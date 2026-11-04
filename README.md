@@ -34,17 +34,28 @@ Each sketch's header comment says what the LEDs should do when it passes.
 
 ### Arduino setup
 
-The board is programmed with [DxCore](https://github.com/SpenceKonde/DxCore). AVR DU support isn't in a DxCore release yet (1.6.2 doesn't include it), so install DxCore manually from the GitHub repository rather than through Boards Manager.
+The board is programmed with [DxCore](https://github.com/SpenceKonde/DxCore) 1.6.2, installed through Boards Manager. It includes the AVR DU.
 
-Tools menu settings (exact menu names may differ in the unreleased DU build):
+The Arduino IDE's Upload Using Programmer doesn't work for this chip in DxCore 1.6.2. The DU board entry leaves some fuse values undefined, so the upload fails before reaching the chip. Use [firmware/flash.ps1](firmware/flash.ps1) instead. It compiles the sketch, then flashes it with DxCore's own SerialUPDI script. It writes flash only and leaves the fuses at their factory defaults, which is fine because the core sets the 24 MHz clock in software.
 
-- Board: the AVR DU-series entry without a bootloader, chip AVR64DU32
-- Clock: 24 MHz internal
-- Flash mapping (FLMAP): unlocked. The default lock setting has been reported to hang the AVR64DU32 after upload.
-- millis()/micros() Timer: any TCB timer (`bringup_04_servos` refuses to build if millis uses TCA0)
-- Programmer: SerialUPDI, 230400 baud
+From PowerShell, in the `firmware` folder:
 
-Upload with Sketch > Upload Using Programmer.
+```powershell
+.\flash.ps1 servo_adapter
+```
+
+```powershell
+.\flash.ps1 bringup\bringup_01_leds
+```
+
+The UPDI Friend is assumed to be on COM3. If Windows gives it a different port, add `-Port COM5` (or whichever port it's on). If PowerShell blocks the script, run it with `powershell -ExecutionPolicy Bypass -File .\flash.ps1 servo_adapter`.
+
+Notes:
+
+- Flashing uses 57600 baud. At 230400 the write reports success but the flash reads back blank.
+- The script builds with chip AVR64DU32, 24 MHz internal clock, and FLMAP unlocked. The default FLMAP setting has been reported to hang the AVR64DU32 after upload.
+- Tools menu options marked "Bootload burn req'd" (BOD, WDT fuses, reset pin) have no effect, since fuses aren't written.
+- You can still use the Arduino IDE to edit and compile (Board: AVR DU-series (no bootloader), Chip: AVR64DU32). Only uploading needs the script.
 
 ### Wiring the UPDI Friend
 

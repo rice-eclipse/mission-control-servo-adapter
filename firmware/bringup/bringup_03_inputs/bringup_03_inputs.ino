@@ -24,7 +24,7 @@ const uint8_t INPUT_2 = PIN_PD2;
 
 const float VREF = 5.0;
 const float DIVIDER = (56.0 + 10.0) / 10.0;
-const float ADC_MAX = 4095.0;  // 12-bit
+const float ADC_MAX = 255.0;  // 8-bit; DxCore 1.6.2's 10-bit mode on the AVR DU divides readings by 4
 
 // Hysteresis, so a slowly changing input doesn't make the LED flicker.
 const float ON_VOLTS = 8.0;
@@ -50,7 +50,7 @@ void setup() {
   pinMode(LED3, OUTPUT);
 
   analogReference(VDD);
-  analogReadResolution(12);
+  analogReadResolution(8);
 }
 
 void loop() {

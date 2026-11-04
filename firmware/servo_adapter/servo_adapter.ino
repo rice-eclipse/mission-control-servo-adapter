@@ -21,11 +21,11 @@ int servo2Pos1 = 1000;  // Servo 2 off / safe
 int servo2Pos2 = 2000;  // Servo 2 on
 
 // ----- Input thresholds -----
-// The 56k/10k divider and 12-bit ADC give about 124 counts per input volt:
-//   0 V = 0, 4 V = 496, 8 V = 993, 12 V = 1489, 24 V = 2978, 30 V = 3723
-const int ON_LEVEL = 993;          // Above 8 V: input is on
-const int OFF_LEVEL = 496;         // Below 4 V: input is off
-const int OVER_RANGE_LEVEL = 3723; // Above 30 V: wiring fault
+// The 56k/10k divider and 8-bit ADC give about 7.7 counts per input volt:
+//   0 V = 0, 4 V = 31, 8 V = 62, 12 V = 93, 24 V = 186, 30 V = 232
+const int ON_LEVEL = 62;           // Above 8 V: input is on
+const int OFF_LEVEL = 31;          // Below 4 V: input is off
+const int OVER_RANGE_LEVEL = 232;  // Above 30 V: wiring fault
 
 const unsigned long DEBOUNCE_MS = 20;  // Input must hold this long to move a servo
 
@@ -75,7 +75,9 @@ void setup() {
   pinMode(STATUS_LED_PIN, OUTPUT);
 
   analogReference(VDD);
-  analogReadResolution(12);
+  // 8-bit, because DxCore 1.6.2's 10-bit mode on the AVR DU wrongly divides
+  // every reading by 4.
+  analogReadResolution(8);
 
   // Start both servos in position 1. Set the position before attach() so
   // the very first pulse is position 1, not the library's default center.
