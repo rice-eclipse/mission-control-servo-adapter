@@ -13,7 +13,7 @@
 
 param(
     [Parameter(Mandatory = $true)][string]$Sketch,
-    [string]$Port = "COM3"
+    [string]$Port = "COM8"
 )
 
 $ErrorActionPreference = "Stop"

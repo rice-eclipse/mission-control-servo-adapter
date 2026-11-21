@@ -15,10 +15,10 @@
 #include <Servo.h>
 
 // ----- Servo end points (microseconds). Tune these to each linkage. -----
-int servo1Pos1 = 1000;  // Servo 1 off / safe
-int servo1Pos2 = 2000;  // Servo 1 on
-int servo2Pos1 = 1000;  // Servo 2 off / safe
-int servo2Pos2 = 2000;  // Servo 2 on
+int servo1Pos1 = 1650;  // Servo 1 off / safe
+int servo1Pos2 = 1000;  // Servo 1 on
+int servo2Pos1 = 1650;  // Servo 2 off / safe
+int servo2Pos2 = 1000;  // Servo 2 on
 
 // ----- Input thresholds -----
 // The 56k/10k divider and 8-bit ADC give about 7.7 counts per input volt:
